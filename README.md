@@ -1,7 +1,7 @@
 # Parcial 1 - FastAPI + React
 
 Proyecto fullstack para gestionar `productos`, `categorias` e `ingredientes` con FastAPI + SQLModel en backend y React + TypeScript + TanStack Query en frontend.
-
+## Link video: https://drive.google.com/drive/u/0/folders/1nhBfNedY2tAo9zx-1bJziTU8cQSZ8HK6
 ## Arquitectura General
 
 - **Backend (`backend/`)**: API REST modular por `routers`, `models` y `schemas`.
