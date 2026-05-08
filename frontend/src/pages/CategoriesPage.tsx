@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
+import CategoryTree from '../components/CategoryTree'
 import Modal from '../components/Modal'
-import { useCategories, useCreateCategory, useDeleteCategory, useUpdateCategory } from '../hooks/useCategories'
+import { useCategories, useCreateCategory, useDeleteCategory, useUpdateCategory } from '../hooks/useApiHooks'
 import type { Category } from '../types'
 
 const CategoriesPage: React.FC = () => {
@@ -11,6 +12,7 @@ const CategoriesPage: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editing, setEditing] = useState<Category | null>(null)
+  const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(null)
   const [nombre, setNombre] = useState('')
   const [formError, setFormError] = useState<string | null>(null)
 
@@ -73,6 +75,14 @@ const CategoriesPage: React.FC = () => {
       </div>
 
       {error ? <p className="rounded bg-red-100 p-3 text-red-700">Error al cargar categorias.</p> : null}
+
+      <div className="mb-5 space-y-2">
+        <h2 className="text-lg font-semibold">Arbol de categorias</h2>
+        <CategoryTree categories={categories ?? []} onSelect={setSelectedCategoryId} />
+        {selectedCategoryId !== null ? (
+          <p className="text-sm text-slate-700">Categoria seleccionada: {selectedCategoryId}</p>
+        ) : null}
+      </div>
 
       <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
         <table className="w-full text-left text-sm">

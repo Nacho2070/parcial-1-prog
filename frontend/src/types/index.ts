@@ -1,6 +1,7 @@
 export interface Category {
   id: number
   nombre: string
+  subcategorias?: Category[] | null
 }
 
 export interface CategoryCreateInput {

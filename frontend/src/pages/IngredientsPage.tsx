@@ -5,7 +5,7 @@ import {
   useDeleteIngredient,
   useIngredients,
   useUpdateIngredient,
-} from '../hooks/useIngredients'
+} from '../hooks/useApiHooks'
 import type { Ingredient } from '../types'
 
 const IngredientsPage: React.FC = () => {

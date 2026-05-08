@@ -1,9 +1,8 @@
 import React, { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useCreateProduct, useDeleteProduct, useProducts, useUpdateProduct } from '../hooks/useProducts'
+import { useCreateProduct, useDeleteProduct, useProducts, useUpdateProduct } from '../hooks/useApiHooks'
 import Modal from '../components/Modal'
-import { useCategories } from '../hooks/useCategories'
-import { useIngredients } from '../hooks/useIngredients'
+import { useCategories, useIngredients } from '../hooks/useApiHooks'
 import type { Product, ProductCreateInput, ProductUpdateInput } from '../types'
 
 const ProductsPage: React.FC = () => {

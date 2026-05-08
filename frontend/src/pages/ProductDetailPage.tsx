@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import { useProductDetail } from '../hooks/useProducts'
+import { useProductDetail } from '../hooks/useApiHooks'
 
 const ProductDetailPage: React.FC = () => {
   const { id } = useParams()
